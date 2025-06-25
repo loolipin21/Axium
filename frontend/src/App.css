@@ -40,3 +40,185 @@
 .read-the-docs {
   color: #888;
 }
+
+body {
+  background: linear-gradient(135deg, #ecfccb 0%, #d1fae5 50%, #99f6e4 100%);
+  min-height: 100vh;
+  margin: 0;
+}
+
+.app-main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 1rem;
+}
+
+/* Headline */
+.app-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #059669;
+  text-shadow: 0 2px 8px rgba(16, 185, 129, 0.12);
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .app-title { font-size: 3rem; }
+}
+@media (min-width: 768px) {
+  .app-title { font-size: 3.75rem; }
+}
+
+/* Form container */
+.form-container {
+  width: 100%;
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+/* Glass card effect for recipe list */
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
+  backdrop-filter: blur(8px);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  margin-top: 3rem;
+  border: 1px solid #e0e7ef;
+  color: #234;
+}
+
+.recipe-list-section {
+  width: 100%;
+  max-width: 48rem;
+}
+
+/* Ensure all text in recipe cards is dark for readability */
+.glass-card h3,
+.glass-card h4,
+.glass-card p,
+.glass-card ul,
+.glass-card li,
+.glass-card footer {
+  color: #234 !important;
+}
+
+/* Utility classes for margin */
+.mt-8 { margin-top: 2rem !important; }
+.mb-10 { margin-bottom: 2.5rem !important; }
+
+/* Add spacing between recipe cards */
+.recipe-list-section > .grid,
+.recipe-list-section > .flex {
+  gap: 2rem;
+}
+
+/* If recipe cards are direct children, add margin */
+.recipe-list-section > * {
+  margin-bottom: 0;
+}
+
+/* Remove margin from last card */
+.recipe-list-section > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive grid for recipe cards */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+@media (min-width: 640px) {
+  .recipe-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1024px) {
+  .recipe-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Modern input form styles */
+.input-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 28rem;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.85);
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px 0 rgba(31, 38, 135, 0.07);
+  padding: 2rem 1.5rem;
+}
+
+@media (min-width: 600px) {
+  .input-form {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 40rem;
+  }
+  .input-textarea {
+    flex: 2 1 0;
+    min-width: 0;
+    margin-bottom: 0;
+  }
+  .input-submit-btn {
+    flex: 1 1 0;
+    align-self: stretch;
+    margin-top: 0;
+    min-width: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.input-textarea {
+  border: 1.5px solid #b5e4d6;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  min-height: 6rem;
+  font-size: 1rem;
+  resize: vertical;
+  background: #f8fafc;
+  color: #234;
+  transition: border 0.2s;
+  margin-bottom: 0.5rem;
+}
+.input-textarea:focus {
+  outline: none;
+  border-color: #34d399;
+  background: #fff;
+}
+
+.input-submit-btn {
+  background: linear-gradient(90deg, #34d399 0%, #06b6d4 100%);
+  color: #fff;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(52, 211, 153, 0.08);
+  transition: background 0.2s, transform 0.1s;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+.input-submit-btn:hover, .input-submit-btn:focus {
+  background: linear-gradient(90deg, #06b6d4 0%, #34d399 100%);
+  transform: translateY(-2px) scale(1.03);
+  outline: none;
+}

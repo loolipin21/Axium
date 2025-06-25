@@ -25,5 +25,18 @@ export async function fetchRecipes(ingredients: string[]): Promise<Recipe[]> {
   const { response } = (await res.json()) as { response: string }
 
   // The LLM must return valid JSON per the prompt above
-  return JSON.parse(response) as Recipe[]
+  const recipes = JSON.parse(response) as Recipe[];
+  // Ensure ingredients is always an array
+  return recipes.map(r => {
+    let ings: string[] = [];
+    if (Array.isArray(r.ingredients)) {
+      ings = r.ingredients;
+    } else if (typeof r.ingredients === 'string') {
+      ings = (r.ingredients as string).split(',').map((s: string) => s.trim()).filter(Boolean);
+    }
+    return {
+      ...r,
+      ingredients: ings,
+    };
+  });
 }

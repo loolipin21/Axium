@@ -23,11 +23,11 @@ export default function InputForm({ onSubmit }: Props) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-4 w-full max-w-md mx-auto"
+      className="input-form"
     >
       {error && <ErrorAlert message={error} />}
       <textarea
-        className="border p-3 rounded resize-y min-h-[6rem]"
+        className="input-textarea"
         placeholder="e.g. chicken, rice, broccoli"
         value={value}
         onChange={(e) => {
@@ -37,7 +37,7 @@ export default function InputForm({ onSubmit }: Props) {
       />
       <button
         type="submit"
-        className="bg-blue-600 text-white rounded py-2 hover:bg-blue-700 transition"
+        className="input-submit-btn"
       >
         Generate Recipes
       </button>
