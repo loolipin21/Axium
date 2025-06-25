@@ -6,7 +6,7 @@ A modern React app for generating delicious recipes with AI. Enter your ingredie
 
 ## Preview
 
-![App Screenshot](public/screenshot.png)
+![App Screenshot](/frontend/public/screenshot.png)
 
 ---
 
